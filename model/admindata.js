@@ -43,7 +43,7 @@ const AdminSchema = mongoose.Schema({
 
 var storagee = multer.diskStorage({
     destination : function(req,file,cb){
-        cb(null,path.join(__dirname,'..',imagepath))
+        cb(null,path.join(__dirname,'../assets',imagepath))
     },
     filename : function(req,file,cb){
         cb(null,file.fieldname+'-'+Date.now())

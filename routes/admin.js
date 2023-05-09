@@ -42,6 +42,9 @@ route.post('/getlogin',passport.authenticate('admin',{failureRedirect:false}),ad
 
 route.get('/logout',admindata.logout)
 
+
+route.get('/buyers',admindata.buyers)
+
 route.use('/category',passport.cheakauthanticate,require('./Categoryroute'))
 
 route.use('/product',passport.cheakauthanticate, require('./productroute'));

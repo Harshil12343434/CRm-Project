@@ -1,6 +1,7 @@
 const express = require('express');
 const product = require('../model/productdata');    
 const user = require('../model/userdata');
+const userbuy = require('../model/userbuy')
 const path = require('path')
 const fs = require('fs')
 
@@ -14,7 +15,7 @@ module.exports.register = (req,res) =>{
 }
 
 module.exports.insertuserregister = async(req,res) =>{
-    req.body.role = 'user'
+    
     let userdata = await user.create(req.body);
     return res.redirect('back');
 }
@@ -38,4 +39,11 @@ module.exports.login = (req,res) =>{
 
 module.exports.getlogin = (req,res)=>{
     return res.redirect('/')
+}
+
+
+module.exports.buy= async(req,res)=>{
+    let data = await userbuy.create(req.body)
+    return res.redirect('back');
+  
 }

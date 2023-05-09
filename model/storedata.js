@@ -1,16 +1,13 @@
 const mongoose = require('mongoose');
 
 const storeSchema = mongoose.Schema({
-    ProductID :{
-        type : mongoose.Schema.Types.ObjectId,
-        ref : 'Product',
-    },
+   
     name : {
         type : String ,
         required : true
     },
     phone : { 
-        type : Number,
+        type : String,
         required : true,
     },
     email : { 

@@ -7,24 +7,26 @@ const admindb = require('../model/admindata');
 //     return res.render('AddCategory');
 // }
 
-module.exports.addcategorydata = async (req,res) =>{
+module.exports.addcategorydata = async (req, res) => {
     let admin = await admindb.find({});
-    return res.render('AddCategory',{
-        data : admin
+    return res.render('AddCategory', {
+        data: admin
     })
 }
 
-module.exports.InsertCdata = async (req,res) =>{
+module.exports.InsertCdata = async (req, res) => {
     let Cdata = await category.create(req.body);
-    
+
     return res.redirect('back');
 }
 
-module.exports.ViewCategory = async(req,res)=>{
-    let data = await category.find({}).populate('adminID').exec();
-    return res.render('ViewCategory',{
-        name : data,
-    })
+module.exports.ViewCategory = async (req, res) => {
+    try {
+        let data123 = await category.find({}).populate('adminID').exec();
+        return res.render('ViewCategory', {
+            name: data123,
+        })
+    } catch(err){
+    console.log(err)    
 }
-
-
+}

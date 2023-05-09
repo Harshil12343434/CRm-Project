@@ -13,9 +13,11 @@ route.get('/login',userc.login);
 
 route.get('/Products',userc.Products)
 
-route.get('/addtocart/:id', userc.addtocart)
+route.get('/addtocart/:id', passport.CheckAuth,userc.addtocart)
 
 route.post('/getlogin',passport.authenticate('userLogin',{failureRedirect:'/login'}), userc.getlogin);
+
+route.post('/buynowwww',userc.buy)
 
 route.use('/admin',require('./admin'))
 

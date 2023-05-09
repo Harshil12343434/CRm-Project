@@ -11,6 +11,7 @@ module.exports.addstore = async (req,res)=>{
 }
 
 module.exports.insertstoreData = async (req,res)=>{
+    
     let data = await store.create(req.body) ;
     return res.redirect('back');
 }

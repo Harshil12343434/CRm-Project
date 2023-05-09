@@ -13,18 +13,7 @@ const UserSchema = mongoose.Schema({
         type : String,
         required : true
     },
-    adress :{
-        type : String,
-        required : true
-    },
-    city : {
-        type : String,
-        required : true
-    },
-    role : {
-        type : String,
-        required : true
-    }
+
 })
  
 
